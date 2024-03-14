@@ -1,7 +1,8 @@
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-import ambient_variable
+from ambient_variable import CONN
+
 
 engine = create_engine(CONN, echo=True)
 Base = declarative_base()

@@ -2,8 +2,7 @@ from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from ORM1 import Pessoa
-import ambient_variable
-
+from ambient_variable import CONN
 
 
 def ReturnSession():
@@ -25,5 +24,5 @@ x = Pessoa(nome="Allison",
            usuario="allison", 
            senha="1234")
 
-session.add(x)
+session.rollback()
 session.commit()
